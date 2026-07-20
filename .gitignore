@@ -1,5 +1,12 @@
 *.sif
 *.simg
+*.log
+*.yml
+*.yaml
+*.png
+*.pdf
+logs/
+figures/
 **.log
 **.out
 **.ipynb_checkpoints

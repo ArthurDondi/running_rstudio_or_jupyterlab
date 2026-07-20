@@ -5,16 +5,17 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
-#SBATCH --mem=40G
+#SBATCH --mem=80G
 #SBATCH --time=12:00:00
 #SBATCH --output=logs/rstudio_apptainer_%j.log #slurm writes everything to --output if --error logs/rstudio_apptainer_%j.err is not set
-
+#SBATCH --error=logs/rstudio_apptainer_%j.err 
 set -ueo pipefail
 
 workdir="$(pwd -P)"
 
 r_version="4.4"
-rstudio_apptainer_image="/research/lab_ccri_bicu/public/apptainer_images/tidyverse-${r_version}-jdk.sif"
+#rstudio_apptainer_image="/research/lab_ccri_bicu/public/apptainer_images/tidyverse-${r_version}-jdk.sif"
+rstudio_apptainer_image="./infercnvSH.sif"
 
 # Other common SLURM variables https://docs.hpc.shef.ac.uk/en/latest/referenceinfo/scheduler/SLURM/SLURM-environment-variables.html#gsc.tab=0
 echo "======================"
